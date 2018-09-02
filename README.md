@@ -32,6 +32,12 @@ Give your wordpress source xml file and the target folder the converter shall
 
 You can force the writing process with the flag `--force`.
 
+Modifying the file extension of your created files is also supported with the option `--extension`. Default is `md`.
+
+Changing the date format or make more folders then th default behaviour does is supported too. Give your date format with the option `--format` and give one of the [possible values](https://secure.php.net/manual/en/function.date.php#refsect1-function.date-parameters). You can also use `/` to make directories. Default is `Y-m-d`.
+
+This setting will only be used for blog posts. Pages and other types do not use any date formatted string in their resulting filename. 
+
 That´s it.
 
 ## License
