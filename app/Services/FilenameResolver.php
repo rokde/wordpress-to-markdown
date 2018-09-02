@@ -29,16 +29,20 @@ class FilenameResolver
 		return $this->directory . DIRECTORY_SEPARATOR
 			. str_plural(array_get($post, 'type', 'post')) . DIRECTORY_SEPARATOR
 			. (array_get($post, 'type') === 'post'
-				? $this->getDatePrefix($post) . '.'
+				? $this->getDatePrefix($post)
 				: '')
 			. $this->getFilename($post);
 	}
 
 	private function getDatePrefix(array $post): string
 	{
-		return array_has($post, 'pubDate')
-			? array_get($post, 'pubDate')->format('Y-m-d')
+		$prefix = array_has($post, 'pubDate')
+			? array_get($post, 'pubDate')->format($this->dateFormat)
 			: '';
+
+		return ends_with($prefix, DIRECTORY_SEPARATOR)
+			? $prefix
+			: $prefix . '.';
 	}
 
 	/**
