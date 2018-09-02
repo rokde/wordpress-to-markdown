@@ -56,6 +56,7 @@ return [
         Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
         Illuminate\Foundation\Console\VendorPublishCommand::class,
+	    \App\Commands\InspiringCommand::class,
     ],
 
     /*

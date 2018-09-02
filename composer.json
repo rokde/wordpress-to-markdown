@@ -49,5 +49,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["workpress-to-markdown"]
+    "bin": ["wordpress-to-markdown"]
 }
