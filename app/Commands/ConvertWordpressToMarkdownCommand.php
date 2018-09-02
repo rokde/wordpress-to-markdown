@@ -21,7 +21,7 @@ class ConvertWordpressToMarkdownCommand extends Command
                             {xml : Wordpress XML File}
                             {output : Write the markdown files in this directory}
                             {--force : Overwrite already found files}
-                            {--date=Y-m-d : Date format for blog posts}
+                            {--format=Y-m-d : Date format for blog posts}
                             {--extension=md : Extension for markdown files}';
 
     /**
@@ -70,7 +70,7 @@ class ConvertWordpressToMarkdownCommand extends Command
     	$this->output->newLine();
     	$filenameResolver = new FilenameResolver(
     		$directory,
-		    $this->option('date', 'Y-m-d'),
+		    $this->option('format', 'Y-m-d'),
 		    $this->option('extension', 'md')
 	    );
 
