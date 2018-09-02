@@ -27,6 +27,7 @@ class FilenameResolver
 	public function resolve(array $post): string
 	{
 		return $this->directory . DIRECTORY_SEPARATOR
+			. str_plural(array_get($post, 'type', 'post')) . DIRECTORY_SEPARATOR
 			. (array_get($post, 'type') === 'post'
 				? $this->getDatePrefix($post) . '.'
 				: '')

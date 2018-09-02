@@ -51,11 +51,8 @@ class ConvertWordpressToMarkdownCommand extends Command
 			$directory = realpath(__DIR__. '/../../') . ltrim($output, '.');
 		}
 
-		$this->task('Writing ' . $this->wp->posts()->count() . ' posts to '. $directory, function () use ($directory) {
+		$this->task('Writing ' . $this->wp->all()->count() . ' posts to '. $directory, function () use ($directory) {
 			return $this->writePosts($directory);
-		});
-		$this->task('Writing ' . $this->wp->pages()->count() . ' pages to '. $directory, function () use ($directory) {
-			return $this->writePages($directory);
 		});
     }
 
@@ -68,23 +65,13 @@ class ConvertWordpressToMarkdownCommand extends Command
 
     private function writePosts(string $directory)
     {
+    	$this->output->newLine();
     	$filenameResolver = new FilenameResolver($directory, 'Y-m-d', 'md');
 
-    	$this->wp->posts()->each(function (array $post) use ($filenameResolver) {
+    	$this->wp->all()->each(function (array $post) use ($filenameResolver) {
     		$filename = $filenameResolver->resolve($post);
 
-    		MarkdownWriter::create($filename, $post)
-		        ->write($this->option('force'));
-	    });
-    	return true;
-    }
-
-    private function writePages(string $directory)
-    {
-    	$filenameResolver = new FilenameResolver($directory, 'Y-m-d', 'md');
-
-    	$this->wp->pages()->each(function (array $post) use ($filenameResolver) {
-    		$filename = $filenameResolver->resolve($post);
+    		$this->info('  ' . $filename);
 
     		MarkdownWriter::create($filename, $post)
 		        ->write($this->option('force'));
