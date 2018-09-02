@@ -77,7 +77,7 @@ class ConvertWordpressToMarkdownCommand extends Command
     	$this->wp->all()->each(function (array $post) use ($filenameResolver) {
     		$filename = $filenameResolver->resolve($post);
 
-    		$this->info('  ' . $filename);
+    		$this->info('✎ ' . $filename);
 
     		MarkdownWriter::create($filename, $post)
 		        ->write($this->option('force'));
