@@ -40,10 +40,14 @@ class MarkdownWriter
 		$this->filename = $filename;
 	}
 
-	public function write()
+	public function write(bool $force = false)
 	{
 		if (!is_dir(dirname($this->filename))) {
 			mkdir(dirname($this->filename), 0777, true);
+		}
+
+		if (file_exists($this->filename) && !$force) {
+			throw new \RuntimeException('File '.$this->filename.' already exists.');
 		}
 
 		$fh = fopen($this->filename, 'wb+');

@@ -19,7 +19,8 @@ class ConvertWordpressToMarkdownCommand extends Command
      */
     protected $signature = 'convert 
                             {xml : Wordpress XML File}
-                            {output : Write the markdown files in this directory}';
+                            {output : Write the markdown files in this directory}
+                            {--force : Overwrite already found files}';
 
     /**
      * The description of the command.
@@ -73,7 +74,7 @@ class ConvertWordpressToMarkdownCommand extends Command
     		$filename = $filenameResolver->resolve($post);
 
     		MarkdownWriter::create($filename, $post)
-		        ->write();
+		        ->write($this->option('force'));
 	    });
     	return true;
     }
@@ -86,7 +87,7 @@ class ConvertWordpressToMarkdownCommand extends Command
     		$filename = $filenameResolver->resolve($post);
 
     		MarkdownWriter::create($filename, $post)
-		        ->write();
+		        ->write($this->option('force'));
 	    });
     	return true;
     }
