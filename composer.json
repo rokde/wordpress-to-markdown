@@ -1,18 +1,17 @@
 {
-    "name": "laravel-zero/laravel-zero",
-    "description": "The Laravel Zero Framework.",
-    "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
-    "homepage": "https://laravel-zero.com",
+    "name": "rokde/wordpress-to-markdown",
+    "description": "A cli application to convert wordpress backup xml into markdown files for posts and pages",
+    "keywords": ["framework", "laravel", "laravel zero", "console", "cli", "wordpress", "markdown"],
     "type": "project",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/laravel-zero/laravel-zero/issues",
-        "source": "https://github.com/laravel-zero/laravel-zero"
+        "issues": "https://github.com/rokde/wordpress-to-markdown/issues",
+        "source": "https://github.com/rokde/wordpress-to-markdown"
     },
     "authors": [
         {
-            "name": "Nuno Maduro",
-            "email": "enunomaduro@gmail.com"
+            "name": "Robert Kummer",
+            "email": "rok@ipunkt.biz"
         }
     ],
     "require": {
@@ -41,11 +40,6 @@
         "platform": {
             "ext-posix": "0"
         }
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "@php application app:rename"
-        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
