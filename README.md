@@ -16,7 +16,11 @@ You have two options. Install it globally into your system and make sure the
  binary `wordpress-to-markdown` is within your `$PATH` variable.
  
 The other way is to install it as your project dependency (like phpunit for
- example). Then you can run `vendor/bin/wordpress-to-markdown` within your
+ example).
+
+	composer require rokde/wordpress-to-markdown 
+
+Then you can run `vendor/bin/wordpress-to-markdown` within your
  project.
 
 ## Usage
@@ -24,9 +28,7 @@ The other way is to install it as your project dependency (like phpunit for
 Give your wordpress source xml file and the target folder the converter shall
  store the converted files.
 
-```bash
-$> wordpress-to-markdown convert path/to/your/wordpress.xml path/to/store/markdown/
-```
+	wordpress-to-markdown convert path/to/your/wordpress.xml path/to/store/markdown/
 
 You can force the writing process with the flag `--force`.
 
