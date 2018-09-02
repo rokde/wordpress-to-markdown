@@ -1,5 +1,7 @@
 # Wordpress to Markdown Converter
 
+[![Latest Stable Version](https://poser.pugx.org/rokde/wordpress-to-markdown/v/stable.svg)](https://packagist.org/packages/rokde/wordpress-to-markdown) [![Latest Unstable Version](https://poser.pugx.org/rokde/wordpress-to-markdown/v/unstable.svg)](https://packagist.org/packages/rokde/wordpress-to-markdown) [![License](https://poser.pugx.org/rokde/wordpress-to-markdown/license.svg)](https://packagist.org/packages/rokde/wordpress-to-markdown) [![Total Downloads](https://poser.pugx.org/rokde/wordpress-to-markdown/downloads.svg)](https://packagist.org/packages/rokde/wordpress-to-markdown)
+
 This application is based on [Laravel Zero](https://laravel-zero.com/), a
  version of laravel optimized for command line usage.
 
