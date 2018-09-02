@@ -7,21 +7,27 @@ class FilenameResolver
 	/**
 	 * @var string
 	 */
+	private $directory;
+	/**
+	 * @var string
+	 */
 	private $dateFormat;
 	/**
 	 * @var string
 	 */
 	private $extension;
 
-	public function __construct(string $dateFormat, string $extension)
+	public function __construct(string $directory, string $dateFormat, string $extension)
 	{
+		$this->directory = rtrim($directory, '/\\');
 		$this->dateFormat = $dateFormat;
 		$this->extension = ltrim($extension, '.');
 	}
 
 	public function resolve(array $post): string
 	{
-		return (array_get($post, 'type') === 'post'
+		return $this->directory . DIRECTORY_SEPARATOR
+			. (array_get($post, 'type') === 'post'
 				? $this->getDatePrefix($post) . '.'
 				: '')
 			. $this->getFilename($post);
