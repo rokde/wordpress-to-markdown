@@ -16,7 +16,7 @@ class FilenameResolver
 	public function __construct(string $dateFormat, string $extension)
 	{
 		$this->dateFormat = $dateFormat;
-		$this->extension = ltrim('.', $extension);
+		$this->extension = ltrim($extension, '.');
 	}
 
 	public function resolve(array $post): string
