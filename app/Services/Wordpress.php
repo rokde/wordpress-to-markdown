@@ -60,16 +60,21 @@ class Wordpress
 		return $this;
 	}
 
+	public function all(): Collection
+	{
+		return $this->posts;
+	}
+
 	public function posts(): Collection
 	{
-		return $this->posts->filter(function (array $post) {
+		return $this->all()->filter(function (array $post) {
 			return array_get($post, 'type') === 'post';
 		});
 	}
 
 	public function pages(): Collection
 	{
-		return $this->posts->filter(function (array $post) {
+		return $this->all()->filter(function (array $post) {
 			return array_get($post, 'type') === 'page';
 		});
 	}
